@@ -1,0 +1,1534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>White Sports Car - HTML CSS</title>
+
+<style>
+
+/* =========================
+   BASIC
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    width:100%;
+    min-height:100vh;
+    overflow:hidden;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:
+        linear-gradient(
+            180deg,
+            #6db7e8 0%,
+            #bde3f8 45%,
+            #8ab9d0 46%,
+            #34383b 47%,
+            #1c1e20 100%
+        );
+
+    font-family:Arial,sans-serif;
+}
+
+
+/* =========================
+   SCENE
+========================= */
+
+.scene{
+    width:1200px;
+    height:700px;
+
+    position:relative;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+
+/* sunlight */
+
+.scene::before{
+    content:"";
+
+    position:absolute;
+
+    width:700px;
+    height:700px;
+
+    left:-150px;
+    top:-250px;
+
+    background:radial-gradient(
+        circle,
+        rgba(255,255,255,.7),
+        transparent 65%
+    );
+
+    pointer-events:none;
+}
+
+
+/* =========================
+   ROAD
+========================= */
+
+.road{
+    position:absolute;
+
+    width:140%;
+    height:250px;
+
+    left:-20%;
+    bottom:-30px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #777 0%,
+            #555 45%,
+            #333 100%
+        );
+
+    transform:perspective(500px) rotateX(35deg);
+
+    border-top:5px solid #aaa;
+}
+
+
+/* road line */
+
+.road-line{
+    position:absolute;
+
+    width:500px;
+    height:8px;
+
+    background:#eeeeee;
+
+    bottom:95px;
+    right:50px;
+
+    transform:rotate(-20deg);
+
+    box-shadow:0 0 5px rgba(255,255,255,.5);
+}
+
+
+/* =========================
+   CAR
+========================= */
+
+.car{
+    width:900px;
+    height:450px;
+
+    position:relative;
+
+    transform:
+        perspective(1200px)
+        rotateY(-3deg);
+
+    z-index:10;
+
+    transition:.4s ease;
+}
+
+.car:hover{
+    transform:
+        perspective(1200px)
+        rotateY(-3deg)
+        translateY(-8px)
+        scale(1.02);
+}
+
+
+/* =========================
+   CAR SHADOW
+========================= */
+
+.car-shadow{
+    position:absolute;
+
+    width:820px;
+    height:85px;
+
+    left:45px;
+    bottom:55px;
+
+    background:rgba(0,0,0,.65);
+
+    border-radius:50%;
+
+    filter:blur(14px);
+}
+
+
+/* =========================
+   MAIN CAR BODY
+========================= */
+
+.body{
+
+    position:absolute;
+
+    width:820px;
+    height:180px;
+
+    left:45px;
+    top:175px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #ffffff 0%,
+            #f5f7f8 25%,
+            #dce1e4 58%,
+            #9da5aa 82%,
+            #555c61 100%
+        );
+
+    border-radius:
+        80px
+        45px
+        25px
+        45px;
+
+    border:2px solid #777d81;
+
+    box-shadow:
+
+        inset 0 8px 12px rgba(255,255,255,.9),
+
+        inset 0 -18px 25px rgba(0,0,0,.25),
+
+        0 25px 30px rgba(0,0,0,.5);
+}
+
+
+/* =========================
+   FRONT NOSE
+========================= */
+
+.front-nose{
+
+    position:absolute;
+
+    width:260px;
+    height:105px;
+
+    right:-10px;
+    top:50px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #fdfdfd,
+            #dfe3e5 55%,
+            #8d969b
+        );
+
+    border-radius:
+        20px
+        85px
+        20px
+        10px;
+
+    transform:skewX(-8deg);
+
+    box-shadow:
+        inset 0 5px 10px white;
+}
+
+
+/* =========================
+   BONNET
+========================= */
+
+.bonnet{
+
+    position:absolute;
+
+    width:340px;
+    height:110px;
+
+    right:65px;
+    top:10px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #ffffff,
+            #edf1f3 55%,
+            #b7bec2
+        );
+
+    border-radius:
+        30px
+        120px
+        10px
+        10px;
+
+    transform:skewX(-8deg);
+
+    box-shadow:
+        inset 0 5px 12px rgba(255,255,255,.9);
+}
+
+
+/* bonnet center line */
+
+.bonnet::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:3px;
+    height:85px;
+
+    left:170px;
+    top:12px;
+
+    background:rgba(100,100,100,.25);
+
+    transform:rotate(3deg);
+}
+
+
+/* =========================
+   ROOF
+========================= */
+
+.roof{
+
+    position:absolute;
+
+    width:450px;
+    height:175px;
+
+    left:205px;
+    top:-125px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #f8f9fa 0%,
+            #dce1e4 50%,
+            #a5adb1 100%
+        );
+
+    border-radius:
+        240px
+        240px
+        20px
+        20px;
+
+    transform:
+        skewX(-5deg);
+
+    border-top:4px solid #ffffff;
+
+    box-shadow:
+        inset 0 8px 15px rgba(255,255,255,.8);
+}
+
+
+/* =========================
+   BLACK ROOF AREA
+========================= */
+
+.black-roof{
+
+    position:absolute;
+
+    width:390px;
+    height:125px;
+
+    left:30px;
+    top:25px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #30383d,
+            #111619 65%,
+            #050606
+        );
+
+    border-radius:
+        200px
+        200px
+        15px
+        15px;
+
+    box-shadow:
+        inset 0 5px 15px rgba(255,255,255,.15);
+}
+
+
+/* =========================
+   FRONT WINDOW
+========================= */
+
+.front-window{
+
+    position:absolute;
+
+    width:185px;
+    height:90px;
+
+    left:45px;
+    top:18px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #5d737e,
+            #172126 55%,
+            #050708
+        );
+
+    border:3px solid #090b0c;
+
+    transform:
+        skewX(-10deg);
+
+    border-radius:
+        80px
+        5px
+        5px
+        5px;
+}
+
+
+/* =========================
+   SIDE WINDOW
+========================= */
+
+.side-window{
+
+    position:absolute;
+
+    width:155px;
+    height:88px;
+
+    right:42px;
+    top:20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #566d78,
+            #1c282e 55%,
+            #050708
+        );
+
+    border:3px solid #090b0c;
+
+    transform:
+        skewX(8deg);
+
+    border-radius:
+        5px
+        80px
+        8px
+        5px;
+}
+
+
+/* glass reflection */
+
+.front-window::after,
+.side-window::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:65px;
+    height:7px;
+
+    left:30px;
+    top:15px;
+
+    background:rgba(255,255,255,.25);
+
+    transform:rotate(-20deg);
+
+    border-radius:20px;
+}
+
+
+/* =========================
+   WINDOW DIVIDER
+========================= */
+
+.window-divider{
+
+    position:absolute;
+
+    width:5px;
+    height:100px;
+
+    left:230px;
+    top:15px;
+
+    background:#070808;
+
+    transform:rotate(5deg);
+}
+
+
+/* =========================
+   MIRROR
+========================= */
+
+.mirror{
+
+    position:absolute;
+
+    width:55px;
+    height:32px;
+
+    left:480px;
+    top:-28px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #4c5559,
+            #101416
+        );
+
+    border:2px solid #111;
+
+    border-radius:
+        60%
+        20%
+        60%
+        20%;
+
+    transform:rotate(-8deg);
+
+    z-index:30;
+
+    box-shadow:0 4px 5px rgba(0,0,0,.4);
+}
+
+
+/* =========================
+   SIDE BODY LINE
+========================= */
+
+.body-line{
+
+    position:absolute;
+
+    width:650px;
+    height:3px;
+
+    left:85px;
+    top:95px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #ffffff,
+            #bfc4c7,
+            #ffffff,
+            transparent
+        );
+
+    opacity:.8;
+}
+
+
+/* =========================
+   DOOR
+========================= */
+
+.door{
+
+    position:absolute;
+
+    width:190px;
+    height:115px;
+
+    left:310px;
+    top:45px;
+
+    border-left:2px solid rgba(70,70,70,.35);
+    border-right:2px solid rgba(70,70,70,.25);
+
+    border-radius:
+        5px
+        5px
+        30px
+        30px;
+}
+
+
+/* door handle */
+
+.handle{
+
+    position:absolute;
+
+    width:48px;
+    height:8px;
+
+    right:12px;
+    top:20px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #777,
+            #151515
+        );
+
+    border-radius:10px;
+
+    box-shadow:
+        0 1px 2px rgba(255,255,255,.5);
+}
+
+
+/* =========================
+   SIDE AIR VENT
+========================= */
+
+.side-vent{
+
+    position:absolute;
+
+    width:75px;
+    height:45px;
+
+    right:210px;
+    bottom:10px;
+
+    background:#222;
+
+    clip-path:
+        polygon(
+            0 100%,
+            25% 0,
+            100% 0,
+            75% 100%
+        );
+
+    box-shadow:
+        inset 0 0 10px #000;
+}
+
+
+/* vent lines */
+
+.side-vent::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:40px;
+    height:3px;
+
+    left:17px;
+    top:20px;
+
+    background:#777;
+
+    box-shadow:
+        0 8px #777,
+        0 16px #777;
+}
+
+
+/* =========================
+   FRONT GRILLE
+========================= */
+
+.grille{
+
+    position:absolute;
+
+    width:180px;
+    height:90px;
+
+    right:25px;
+    bottom:15px;
+
+    background:#050607;
+
+    clip-path:
+        polygon(
+            12% 0,
+            88% 0,
+            100% 100%,
+            0 100%
+        );
+
+    border:3px solid #202427;
+
+    box-shadow:
+        inset 0 0 15px #000;
+}
+
+
+/* grille pattern */
+
+.grille::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:100%;
+    height:100%;
+
+    background:
+        repeating-linear-gradient(
+            90deg,
+            transparent 0px,
+            transparent 12px,
+            #383d40 13px,
+            #383d40 15px
+        );
+
+    opacity:.7;
+}
+
+
+/* =========================
+   GRILLE BADGE
+========================= */
+
+.badge{
+
+    position:absolute;
+
+    width:35px;
+    height:35px;
+
+    right:98px;
+    bottom:40px;
+
+    border:3px solid #aaa;
+
+    border-radius:50%;
+
+    z-index:10;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    color:#bbb;
+
+    font-size:13px;
+    font-weight:bold;
+}
+
+
+/* =========================
+   HEADLIGHTS
+========================= */
+
+.headlight{
+
+    position:absolute;
+
+    width:130px;
+    height:38px;
+
+    top:52px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ffffff,
+            #eafaff 45%,
+            #6dd8ff
+        );
+
+    border:2px solid #eafaff;
+
+    box-shadow:
+        0 0 8px white,
+        0 0 20px rgba(80,210,255,.8);
+
+    z-index:20;
+
+    transform:
+        skewX(-20deg);
+
+    border-radius:
+        20px
+        50px
+        10px
+        10px;
+}
+
+
+.headlight-left{
+    right:150px;
+}
+
+
+.headlight-right{
+    right:12px;
+}
+
+
+/* headlight internal line */
+
+.headlight::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:95px;
+    height:3px;
+
+    left:15px;
+    top:16px;
+
+    background:white;
+
+    box-shadow:
+        0 0 7px white;
+}
+
+
+/* =========================
+   FRONT SPLITTER
+========================= */
+
+.splitter{
+
+    position:absolute;
+
+    width:300px;
+    height:18px;
+
+    right:-10px;
+    bottom:-8px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #333,
+            #050505
+        );
+
+    border-radius:
+        5px
+        5px
+        20px
+        10px;
+
+    transform:skewX(-10deg);
+
+    box-shadow:
+        0 5px 5px rgba(0,0,0,.5);
+}
+
+
+/* =========================
+   FRONT AIR INTAKE
+========================= */
+
+.intake{
+
+    position:absolute;
+
+    width:65px;
+    height:40px;
+
+    right:190px;
+    bottom:0;
+
+    background:#080808;
+
+    clip-path:
+        polygon(
+            10% 100%,
+            30% 0,
+            100% 0,
+            80% 100%
+        );
+}
+
+
+/* =========================
+   FRONT LICENSE
+========================= */
+
+.license{
+
+    position:absolute;
+
+    width:90px;
+    height:34px;
+
+    right:98px;
+    bottom:37px;
+
+    background:#eeeeee;
+
+    border:2px solid #888;
+
+    z-index:15;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    color:#145b91;
+
+    font-size:13px;
+    font-weight:bold;
+
+    transform:skewX(-5deg);
+
+    box-shadow:
+        0 2px 4px rgba(0,0,0,.5);
+}
+
+
+/* =========================
+   FRONT FENDER
+========================= */
+
+.fender{
+
+    position:absolute;
+
+    width:170px;
+    height:130px;
+
+    right:135px;
+    bottom:-3px;
+
+    border-radius:90px 90px 0 0;
+
+    border-top:5px solid rgba(70,70,70,.5);
+
+    z-index:2;
+}
+
+
+/* =========================
+   REAR SPOILER
+========================= */
+
+.spoiler{
+
+    position:absolute;
+
+    width:185px;
+    height:100px;
+
+    left:5px;
+    top:45px;
+
+    z-index:35;
+}
+
+
+.spoiler-wing{
+
+    position:absolute;
+
+    width:200px;
+    height:20px;
+
+    left:-5px;
+    top:5px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #33383b,
+            #050607
+        );
+
+    border-radius:50%;
+
+    transform:rotate(-5deg);
+
+    box-shadow:
+        0 5px 7px rgba(0,0,0,.7);
+}
+
+
+.spoiler-leg{
+
+    position:absolute;
+
+    width:9px;
+    height:65px;
+
+    top:18px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #555,
+            #111
+        );
+
+    transform:rotate(-5deg);
+}
+
+
+.leg-left{
+    left:32px;
+}
+
+
+.leg-right{
+    right:25px;
+}
+
+
+/* =========================
+   REAR LIGHT
+========================= */
+
+.rear-light{
+
+    position:absolute;
+
+    width:75px;
+    height:22px;
+
+    left:12px;
+    top:75px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #650000,
+            #ff2020,
+            #ff6b6b
+        );
+
+    border-radius:
+        5px
+        20px
+        20px
+        5px;
+
+    box-shadow:
+        0 0 12px rgba(255,0,0,.6);
+
+    transform:skewX(-15deg);
+}
+
+
+/* =========================
+   WHEEL
+========================= */
+
+.wheel{
+
+    position:absolute;
+
+    width:150px;
+    height:150px;
+
+    bottom:35px;
+
+    background:
+        radial-gradient(
+            circle,
+            #252525 0%,
+            #090909 58%,
+            #000 60%
+        );
+
+    border-radius:50%;
+
+    border:14px solid #070707;
+
+    box-shadow:
+        0 0 0 3px #444,
+        inset 0 0 12px #000,
+        0 12px 18px rgba(0,0,0,.8);
+
+    z-index:50;
+}
+
+
+/* wheel positions */
+
+.front-wheel{
+    right:110px;
+}
+
+
+.back-wheel{
+    left:105px;
+}
+
+
+/* =========================
+   RIM
+========================= */
+
+.rim{
+
+    position:absolute;
+
+    width:92px;
+    height:92px;
+
+    left:15px;
+    top:15px;
+
+    border-radius:50%;
+
+    background:
+        radial-gradient(
+            circle,
+            #777 0%,
+            #444 35%,
+            #151515 40%,
+            #222 70%,
+            #777 72%,
+            #222 76%
+        );
+
+    border:5px solid #aaa;
+
+    box-shadow:
+        inset 0 0 12px #000;
+}
+
+
+/* center hub */
+
+.rim::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:25px;
+    height:25px;
+
+    left:28px;
+    top:28px;
+
+    border-radius:50%;
+
+    background:
+        radial-gradient(
+            circle,
+            #aaa,
+            #333
+        );
+
+    border:3px solid #888;
+
+    z-index:10;
+}
+
+
+/* =========================
+   RIM SPOKES
+========================= */
+
+.spoke{
+
+    position:absolute;
+
+    width:8px;
+    height:35px;
+
+    left:38px;
+    top:6px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #aaa,
+            #333
+        );
+
+    border-radius:5px;
+
+    transform-origin:
+        4px 40px;
+}
+
+
+.spoke:nth-child(1){
+    transform:rotate(0deg);
+}
+
+
+.spoke:nth-child(2){
+    transform:rotate(60deg);
+}
+
+
+.spoke:nth-child(3){
+    transform:rotate(120deg);
+}
+
+
+.spoke:nth-child(4){
+    transform:rotate(180deg);
+}
+
+
+.spoke:nth-child(5){
+    transform:rotate(240deg);
+}
+
+
+.spoke:nth-child(6){
+    transform:rotate(300deg);
+}
+
+
+/* =========================
+   WHEEL ARCH
+========================= */
+
+.wheel-arch{
+
+    position:absolute;
+
+    width:175px;
+    height:120px;
+
+    bottom:20px;
+
+    border-radius:
+        100px
+        100px
+        0
+        0;
+
+    border-top:5px solid rgba(80,80,80,.7);
+
+    z-index:45;
+}
+
+
+.arch-front{
+    right:98px;
+}
+
+
+.arch-back{
+    left:93px;
+}
+
+
+/* =========================
+   LOWER SIDE SKIRT
+========================= */
+
+.side-skirt{
+
+    position:absolute;
+
+    width:480px;
+    height:25px;
+
+    left:190px;
+    bottom:12px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #8f979b,
+            #34393c
+        );
+
+    clip-path:
+        polygon(
+            0 20%,
+            100% 0,
+            94% 100%,
+            5% 100%
+        );
+
+    z-index:20;
+}
+
+
+/* =========================
+   LOWER BLACK EDGE
+========================= */
+
+.black-edge{
+
+    position:absolute;
+
+    width:690px;
+    height:12px;
+
+    left:70px;
+    bottom:-4px;
+
+    background:#111;
+
+    border-radius:20px;
+
+    z-index:25;
+}
+
+
+/* =========================
+   FRONT FOG LIGHT
+========================= */
+
+.fog{
+
+    position:absolute;
+
+    width:32px;
+    height:15px;
+
+    right:18px;
+    bottom:28px;
+
+    background:#d9ffff;
+
+    border-radius:50%;
+
+    box-shadow:
+        0 0 10px #9fffff;
+
+    z-index:20;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:1000px){
+
+    .car{
+        transform:scale(.78);
+    }
+
+    .car:hover{
+        transform:scale(.80) translateY(-8px);
+    }
+}
+
+
+@media(max-width:700px){
+
+    .car{
+        transform:scale(.58);
+    }
+
+    .car:hover{
+        transform:scale(.60) translateY(-6px);
+    }
+}
+
+
+@media(max-width:500px){
+
+    .car{
+        transform:scale(.43);
+    }
+
+    .car:hover{
+        transform:scale(.45) translateY(-5px);
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+<div class="scene">
+
+    <!-- ROAD -->
+    <div class="road">
+        <div class="road-line"></div>
+    </div>
+
+
+    <!-- CAR -->
+    <div class="car">
+
+        <!-- SHADOW -->
+        <div class="car-shadow"></div>
+
+
+        <!-- MAIN BODY -->
+        <div class="body">
+
+            <!-- ROOF -->
+            <div class="roof">
+
+                <div class="black-roof">
+
+                    <div class="front-window"></div>
+
+                    <div class="side-window"></div>
+
+                    <div class="window-divider"></div>
+
+                </div>
+
+            </div>
+
+
+            <!-- HOOD -->
+            <div class="bonnet"></div>
+
+
+            <!-- FRONT NOSE -->
+            <div class="front-nose"></div>
+
+
+            <!-- BODY LINE -->
+            <div class="body-line"></div>
+
+
+            <!-- DOOR -->
+            <div class="door">
+                <div class="handle"></div>
+            </div>
+
+
+            <!-- MIRROR -->
+            <div class="mirror"></div>
+
+
+            <!-- SIDE VENT -->
+            <div class="side-vent"></div>
+
+
+            <!-- HEADLIGHTS -->
+            <div class="headlight headlight-left"></div>
+
+            <div class="headlight headlight-right"></div>
+
+
+            <!-- FRONT GRILLE -->
+            <div class="grille"></div>
+
+
+            <!-- BADGE -->
+            <div class="badge">S</div>
+
+
+            <!-- NUMBER PLATE -->
+            <div class="license">
+                CY58 965
+            </div>
+
+
+            <!-- AIR INTAKE -->
+            <div class="intake"></div>
+
+
+            <!-- FRONT SPLITTER -->
+            <div class="splitter"></div>
+
+
+            <!-- FOG LIGHT -->
+            <div class="fog"></div>
+
+
+            <!-- REAR LIGHT -->
+            <div class="rear-light"></div>
+
+
+            <!-- SPOILER -->
+            <div class="spoiler">
+
+                <div class="spoiler-wing"></div>
+
+                <div class="spoiler-leg leg-left"></div>
+
+                <div class="spoiler-leg leg-right"></div>
+
+            </div>
+
+
+            <!-- SIDE SKIRT -->
+            <div class="side-skirt"></div>
+
+
+            <!-- BLACK LOWER EDGE -->
+            <div class="black-edge"></div>
+
+
+            <!-- WHEEL ARCHES -->
+            <div class="wheel-arch arch-front"></div>
+
+            <div class="wheel-arch arch-back"></div>
+
+        </div>
+
+
+        <!-- BACK WHEEL -->
+        <div class="wheel back-wheel">
+
+            <div class="rim">
+
+                <span class="spoke"></span>
+                <span class="spoke"></span>
+                <span class="spoke"></span>
+                <span class="spoke"></span>
+                <span class="spoke"></span>
+                <span class="spoke"></span>
+
+            </div>
+
+        </div>
+
+
+        <!-- FRONT WHEEL -->
+        <div class="wheel front-wheel">
+
+            <div class="rim">
+
+                <span class="spoke"></span>
+                <span class="spoke"></span>
+                <span class="spoke"></span>
+                <span class="spoke"></span>
+                <span class="spoke"></span>
+                <span class="spoke"></span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

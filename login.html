@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+</head>
+<style>
+    *{
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+    }
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background: white;
+    }
+    #home{
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        
+    }
+    #section1{
+        width: 50%;
+        height: 100%;
+         display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: whitesmoke;
+    }
+        #section2{
+        width: 50%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background-color: orange;
+    }
+    .box{
+        width: 50%;
+        height: 50%;
+         display: flex;
+        flex-direction: column;
+        justify-content: start;
+        /* align-items: center; */
+        /* border: 2px solid red; */
+    }
+   #section1 #face{
+    width: 100%;
+    /* border: 2px solid red; */
+    height: 40%;
+ display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: end;
+   }
+   #section1 .box1{
+    width: 200px;
+    background-color: blue;
+    height: 100px;
+    /* margin: 2px 2px;  */
+    border-top-left-radius: 100px;
+    border-top-right-radius: 100px;  
+    z-index: 100;
+    overflow: visible;
+    display: flex;
+    
+}
+#face .boz:nth-last-child(1){
+    width: 8px;
+    height: 8px;
+    margin-left: -55px ;
+    margin-top: 30px;
+    position: relative;
+    
+    background-color: black;
+    transform: translateX(100px);
+    border-radius: 100%;
+}
+
+#face .boz:nth-last-child(2){
+    width: 8px;
+    height: 8px;
+    margin-left: 20px ;
+    margin-top: 30px;
+    position: relative;
+    
+    background-color: black;
+    transform: translateX(100px);
+    border-radius: 100%;
+}
+#section1 .box2{
+         
+    width: 14%;
+    background-color: red;
+    height: 100%;
+    margin-left: -10%;
+    z-index: 1;
+    display: flex;
+   }
+   #section1 .box2 .bos{
+     width: 8px;
+    height: 8px;
+    margin-left: 27px ;
+    margin-top: 20px;
+    position: relative;
+    
+    background-color: black;
+    /* transform: translateX(100px); */
+    border-radius: 100%;
+   }
+    #section1 .box3{
+     width: 12%;
+    background-color: green;
+    height: 80%;
+    margin-left: -10%;
+    /* margin: 0px 1px; */
+    /* border-radius: ; */
+    z-index: 10;
+    display: flex;
+    /* justify-content: center; */
+    
+}
+ #section1 .box3 .boss{
+     width: 8px;
+    height: 8px;
+    margin-left: 20px ;
+    margin-top: 20px;
+    position: relative;
+    
+    background-color: black;
+    border-radius: 100%;
+   } 
+#section1 .box4{
+     width: 10%;
+    background-color: yellow;
+    height: 60%;
+    margin-left: -3%;
+    z-index: 19;
+    display: flex;
+    
+   }
+    #section1 .box4 .bosss{
+     width: 8px;
+    height: 8px;
+    margin-left: 18px ;
+    margin-top: 20px;
+    position: relative;
+    
+    background-color: black;
+    border-radius: 100%;
+   } 
+   /*
+    #section1 .box5{
+    width: 12%;
+    background-color: blue;
+    height: 46%;
+    margin: 2px 2px;
+    border-top-left-radius:50px ;
+    border-top-right-radius:50px ;
+    
+   } */
+    #container{
+        width: 55%;
+        height: 30%;
+        text-align: left;
+        border: 2px solid red;
+        display: flex;
+        flex-direction: column;
+        /* justify-content: center; */
+        /* align-items: center; */
+        /* filter: blur(1px); */
+    
+        
+    }
+    input{
+        width: 250px;
+        height: 25px;
+        margin: 10px 2px ;
+    }
+    .square{
+        width: 50%;
+        height: 30%;
+        border: 2px solid blue;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* margin-top: 50px; */
+    }
+    .button{
+        width: 100px;
+        height: 30px;
+    }
+</style>
+<body>
+    <div id="home">
+<div id="section1">
+    <div id="face">
+        <div class="box1">
+           <div class="boz"></div>
+           <div class="boz"></div>
+        </div>
+        <div class="box2">
+            <div class="bos"></div>
+            <div class="bos"></div>
+        </div>
+        <div class="box3">
+            <div class="boss"></div>
+            <div class="boss"></div>
+        </div>
+        <div class="box4">
+            <div class="bosss"></div>
+            <div class="bosss"></div>
+        </div>
+        <div class="box5"></div>
+    </div>
+</div>
+<div id="section2">
+    <div id="container">
+   
+<h2 id="h2">Username</h2>
+<input type="text" name="text" id="text" placeholder="Enter your name">
+<h2 id="h1">Password</h2>
+<input type="password" name="password" id="password" placeholder="Enter your password">
+</div>
+<div class="square">
+<button type="button" class="button">Sign in</button>
+</div>
+</div>
+    </div>
+</body>
+</html>
